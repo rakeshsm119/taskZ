@@ -37,27 +37,27 @@ cr<!DOCTYPE html>
         <div class="col-md-6 offset-md-3">
             <div class="card">
                 <div class="card-body">
-                    <form action="/updateTask" method="post" autocomplete="off">
+                    <form action="/updateTask/<%= task._id %>" method="post" autocomplete="off">
                         <div class="form-group mt-2">
                             <label for="title">Title</label>
-                            <input type="text" name="title" id="title" class="form-control" required>
+                            <input type="text" name="title" id="title" class="form-control" value="<%= task.title %>" required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="contact">Contact</label>
-                            <textarea name="contact" id="contact" cols="30" rows="5" class="form-control" required></textarea>
+                            <label for="content">Content</label>
+                            <textarea name="content" id="content" cols="30" rows="5" class="form-control"  required> <%= task.content %></textarea>
                         </div>
 
                         <div class="form-group mt-2">
-                            <label for="start">Start Date</label>
-                            <input type="datetime-local" name="start" id="start" class="form-control" required>
+                            <label for="start">Start Date = <strong class="text-danger"><%= task.start %></strong> </label>
+                            <input type="datetime-local" name="start" id="start" class="form-control" value="<%= task.start %>"required>
                         </div>
                         <div class="form-group mt-2">
-                            <label for="end">End</label>
-                            <input type="datetime-local" name="end" id="end" class="form-control" required>
+                            <label for="end">End Date = <strong class="text-danger"><%= task.end %></strong> </label>
+                            <input type="datetime-local" name="end" id="end" class="form-control" value="<%= task.end %>" required>
                         </div>
                         <div class="form-group mt-2">
                             <label for="user">User name</label>
-                            <input type="text" name="user" id="user" class="form-control" required>
+                            <input type="text" name="user" id="user" class="form-control" value="<%= task.user %>" required>
                         </div>
                         <div class="form-group mt-2">
                             <input type="submit" value="Update Task" class="btn btn-success">
